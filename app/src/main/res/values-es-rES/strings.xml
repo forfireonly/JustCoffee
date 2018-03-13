@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JustCoffee</string>
+    <string name="name">nombre</string>
+    <string name="whipped_cream">ingridientes</string>
+    <string name="toppings">ingridientes</string>
+    <string name="chocolate">chocolate</string>
+    <string name="quantity">cantidad</string>
+    <string name="checkyourorder">verifique su orden</string>
+    <string name="checkyourorderagain">verifique su orden</string>
+    <string name="place_your_order">Haga su pedido</string>
+    <string name="coffeeorder">pedido de cafe para</string>
+    <string name="mailto">correo</string>
+    <string name="name1">nombre</string>
+    <string name="whippedcream">crema batida</string>
+    <string name="chocolatetopping">chocolate</string>
+</resources>
