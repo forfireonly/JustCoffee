@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JustCoffee</string>
+    <string name="app_name" translatable="false">JustCoffee</string>
     <string name="name">Name</string>
     <string name="toppings">Toppings</string>
     <string name="whipped_cream">Whipped Cream</string>
@@ -8,8 +8,8 @@
     <string name="place_your_order">Place Your Order</string>
     <string name="checkyourorder">Please, check your order</string>
     <string name="checkyourorderagain">Please, check your order</string>
-    <string name="coffeeorder">Coffee Order for</string>
-    <string name="mailto">mailto:</string>
+    <string name="coffeeorder">Coffee Order for  </string>
+    <string name="mailto" translatable="false">mailto:</string>
     <string name="name1">Name:</string>
     <string name="whippedcream">Add Whipped Cream:</string>
     <string name="chocolatetopping">Add Chocolate:</string>

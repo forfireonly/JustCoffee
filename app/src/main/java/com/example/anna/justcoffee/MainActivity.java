@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void sendEmail() {
         EditText nameSpace = findViewById(R.id.name_view);
-        String name = nameSpace.getText().toString();
-        String emailSubject = getString(R.string.coffeeorder) + name;
+        String namePerson = nameSpace.getText().toString();
+        String emailSubject = getString(R.string.coffeeorder) + " " + namePerson;
         String summaryMessage = createOrderSummary(pricetopay);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse(getString(R.string.mailto)));
@@ -128,16 +128,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private String createOrderSummary(int finalPrice) {
+    private String createOrderSummary(int payment) {
 
         //finding checkboxes and checking if they are checked
 
         choiceWhippedCream = choiceBoxWhippedCream.isChecked();
         choiceChocolate = choiceBoxChocolate.isChecked();
+        int finalPrice = calculatePrice(quantity, price);
+
 
         // finding name space and getting the name
         EditText nameSpace = findViewById(R.id.name_view);
-        String name = nameSpace.getText().toString();
+        String namePerson = nameSpace.getText().toString();
       /* if (choiceWhippedCream == true) {
             Log.v("Main Activity", "Add Whipped Cream" + finalPrice);
 
@@ -145,14 +147,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     else {Log.v("Main Activity", "Don't Add Whipped Cream"+finalPrice);}*/
         //returning the order summary
 
-        return (getString(R.string.name1) + name + getString(R.string.whippedcream) + choiceWhippedCream + getString(R.string.chocolatetopping) + choiceChocolate + "\nQuantity: " + quantity + "\nTotal: $" + finalPrice + "\nThank You");
+
+        return (getString(R.string.name1) + " " + namePerson + "\n" + getString(R.string.whippedcream) + " " + choiceWhippedCream + "\n" + getString(R.string.chocolatetopping) + " " + choiceChocolate + "\nQuantity: " + quantity + "\nTotal: $" + finalPrice + "\nThank You");
     }
 
     @Override
     public void onClick(View view) {
 
     }
+
+    public void sendEmail(View view) {
+        EditText nameSpace = findViewById(R.id.name_view);
+        String namePerson = nameSpace.getText().toString();
+        String emailSubject = getString(R.string.coffeeorder) + " " + namePerson;
+        String summaryMessage = createOrderSummary(pricetopay);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse(getString(R.string.mailto)));
+        intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
+        intent.putExtra(Intent.EXTRA_TEXT, summaryMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
+
+    }
 }
+
+
 
 /**
  * This method displays the given quantity value on the screen.
