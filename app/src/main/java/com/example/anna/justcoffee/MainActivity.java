@@ -94,6 +94,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public int numLength(long num) {
+        String stringNumber = Long.toString(num);
+        int numberLength = stringNumber.length();
+        return numberLength;
+    }
+
+    public int numLength2(long num) {
+        return Long.toString(num).length();
+    }
+
+    public int numlength(long num) {
+        return (int) (Math.log(num) / Math.log(10) + 1);
+    }
 
     protected void sendEmail() {
         EditText nameSpace = findViewById(R.id.name_view);

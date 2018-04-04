@@ -93,6 +93,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:text="0"
+
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -110,6 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:autoLink="all"
             android:onClick="sendEmail"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
@@ -119,6 +121,7 @@
         <ImageView
             android:id="@+id/coffeeneed"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:src="@drawable/coffeecomp" />
 
